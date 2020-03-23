@@ -1,27 +1,31 @@
-# ambiente:
+## ambiente:
 
 <p align="center">
 	<img src="omniStack11.jpg">
 </p>
 
-## node.js
+### node.js
 https://github.com/nodesource/distributions/blob/master/README.md
-
-### code
 
 > node -v #versão do node
 
-## npm
+### npm
 
 > npm - v #versão do npm
 
-## Visual Studio Code
+### Visual Studio Code
 
-# Hello world
+----
+
+## Nodejs
+
+### Hello world
+> mkdir backend
+> cd backend
+
 > npm init -y
 > npm install express
 
-## configuração
 > touch index.js
 
 '''
@@ -37,3 +41,6 @@ app.listen(3333);
 '''
 
 > node index.js
+
+## Reactjs
+> npx create-react-app frontend
