@@ -1,20 +1,25 @@
-## ambiente:
+# Semana OmniStack 11 
 
-<p align="center">
-	<img src="omniStack11.jpg">
-</p>
+![alt text](/omniStack11.jpg)
 
-### node.js
-https://github.com/nodesource/distributions/blob/master/README.md
+----
 
-> node -v #versão do node
+## Configuração de Ambiente:
+
+### Node.js
+[Instalar o node.js](https://github.com/nodesource/distributions/blob/master/README.md)
+
+> node -v // mostra a versão do node
 
 ### npm
 
-> npm - v #versão do npm
+> npm - v //mostra a versão do npm
 
-### Visual Studio Code
-
+### Visual Studio Code: Plugins (Ctrl+P)
+    * ext install spywhere.guides
+    * ext install eamodio.gitlens
+    * ext install christian-kohler.path-intellisense
+    * ext install vscode-icons-team.vscode-icons	
 ----
 
 ## Nodejs
@@ -28,7 +33,7 @@ https://github.com/nodesource/distributions/blob/master/README.md
 
 > touch index.js
 
-'''
+```
 const express = require('express');
 
 const app = express();
@@ -38,9 +43,11 @@ app.get('/',(request, response) => {
 });
 
 app.listen(3333);
-'''
+```
 
 > node index.js
+
+----
 
 ## Reactjs
 > npx create-react-app frontend
