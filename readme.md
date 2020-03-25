@@ -1,5 +1,11 @@
 # Semana OmniStack 11 
 
+0. [Configuração de Ambiente:](#-Configuração-de-Ambiente)
+1. [Node.js](#-Node.js)
+2. [React.js](#-React.js)
+3. [Rota e Recursos](#-Rota-e-Recursos)
+4. [Banco de dados](#-Banco-de-dados)
+
 ![alt text](/omniStack11.jpg)
 
 ----
@@ -8,6 +14,9 @@
 
 ### Node.js
 [Instalar o node.js](https://github.com/nodesource/distributions/blob/master/README.md)
+
+* `npm`: instala um pacote
+* `npx`: executa um pacote
 
 ~~~bash
  node -v #mostra a versão do node
@@ -55,7 +64,7 @@ app.listen(3333);
 
 ----
 
-## Reactjs
+## React.js
 ~~~bash 
  npx create-react-app frontend #cria um projet
  cd frontend
@@ -64,29 +73,30 @@ app.listen(3333);
 
 ----
 
-# Dia 2  // Parei em 00:23:13 
+# Dia 2  // Parei em 00:34:13 
 
-# Rota e Recursos
+## Rota e Recursos
 
-## Métodos HTTP
+### Métodos HTTP
 * `GET`: *Buscar/Listar* uma informação do back-end
 * `POST`: *Cria* uma informação do back-end
 * `PUT`: *Altera* uma informação do back-end
 * `DELETE`: *Delete* uma informação do back-end
 
-## Tipos de parâmetros
-* `Query Params`: parâmetros nomeados enviados na rota após "?". Exemplo: filtro, páginação
-* `Route Params`: parâmetros utilizados para identificar recursos 
-* `Request Body`: Corpo da requisição, utilizado para criar ou alterar recursos
-    * Converter json para javascript: `app.use(express.json());` 
-
-## Insomnia.rest
+#### [Insomnia.rest](https://insomnia.rest/) : (Ferramenta para manipular os Métodos HTTP)
 ~~~bash 
 $ sudo snap install insomnia 
 ~~~
 
+#### Tipos de parâmetros
+* `Query Params`: parâmetros nomeados enviados na rota após *"?"*. Exemplo: filtro, páginação;
+* `Route Params`: parâmetros utilizados para identificar recursos ;
+* `Request Body`: Corpo da requisição, utilizado para criar ou alterar recursos.
+    * Converter json para javascript: `app.use(express.json());`.
+
 ## Nodemon
 * Atualiza automaticamente o servido do `Node.js`
+
 ~~~bash
 npm install nodemon # em todo o programa
 ~~~
@@ -96,10 +106,22 @@ npm install nodemon -D # apenas na dependência de desenvolvimento
 ~~~
 
 ~~~bash
- npm start # ativa o localhost:3333 
+npm start # ativa e atualiza automaticamente o localhost:3333 
 ~~~
 
 ## Banco de dados
-### SQLite
+
+### [Knex.js](http://knexjs.org/)
+
+~~~bash
+npm install knex 
+npm install sqlite3
+~~~
+
+### [SQLite](https://www.sqlite.org/index.html)
 * Driver: SELECT * FROM users
 * Query Builder: table('users').select(*).where()
+
+~~~bash
+npx knex init # configura o acesso ao banco de dados para cada aplicação
+~~~
