@@ -1,16 +1,19 @@
 # Semana OmniStack 11 
 
-0. [Configuração de Ambiente:](#configuração-de-ambiente)
-1. [Node.js](#nodejs-1)
-2. [React.js](#reactjs)
-3. [Rota e Recursos](#rota-e-recursos)
-4. [Banco de dados](#banco-de-dados)
+| [Configuração de Ambiente](#configuração-de-ambiente) | [Back-end](#back-end ) | [Front-end ](#front-end) |
+|:--------------------------------:|:---------------------------------------:|:-------------------------:|
+| [Estrutura de diretórios](#estrutura-de-diretórios)     | [Node.js](#nodejs-1) | [React.js ](#reactjs) |
+| [Visual Studio Code](#visual-studio-code-plugins-ctrlp) | [Rota e Recursos](#rota-e-recursos  ) |      |
+| [Node.js](#nodejs)         | [Banco de dados](#banco-de-dados)   |                          |
+| [Nodemon](#nodemon)                |                                     |                          |
+| [Insomnia.rest](#insomniarest--ferramenta-para-manipular-os-métodos-http) |       |                                     |                          
+
 
 ![alt text](/omniStack11.jpg)
 
 ----
 
-## Configuração de Ambiente:
+# Configuração de Ambiente:
 
 ### Estrutura de diretórios
 * `./backend`
@@ -53,6 +56,8 @@ npm start # ativa e atualiza automaticamente o localhost:3333
 
 ----
 
+# Back-end
+
 ## Node.js
 
 ### Hello world
@@ -85,8 +90,6 @@ app.listen(3333);
 ~~~
 
 ----
-
-# Dia 2  // Parei em 00:34:13 
 
 ## Rota e Recursos
 
@@ -192,7 +195,9 @@ npx knex migrate:rollback
 
 ---
 
-## React.js - Frontend
+# Frontend
+
+## React.js
 ~~~bash 
  npx create-react-app frontend #cria um projet
  cd frontend
