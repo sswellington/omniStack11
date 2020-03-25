@@ -1,16 +1,29 @@
 # Semana OmniStack 11 
 
-0. [Configuração de Ambiente:](#-Configuração-de-Ambiente)
-1. [Node.js](#-Node.js)
-2. [React.js](#-React.js)
-3. [Rota e Recursos](#-Rota-e-Recursos)
-4. [Banco de dados](#-Banco-de-dados)
+0. [Configuração de Ambiente:](#configuração-de-ambiente)
+1. [Node.js](#nodejs-1)
+2. [React.js](#reactjs)
+3. [Rota e Recursos](#rota-e-recursos)
+4. [Banco de dados](#banco-de-dados)
 
 ![alt text](/omniStack11.jpg)
 
 ----
 
 ## Configuração de Ambiente:
+
+### Estrutura de diretórios
+* `./backend`
+    * `./scr`
+    * `./database`
+        * `./migration` 
+* `./frontend`
+
+### Visual Studio Code: Plugins (Ctrl+P)
+    * ext install spywhere.guides
+    * ext install eamodio.gitlens
+    * ext install christian-kohler.path-intellisense
+    * ext install vscode-icons-team.vscode-icons	
 
 ### Node.js
 [Instalar o node.js](https://github.com/nodesource/distributions/blob/master/README.md)
@@ -23,11 +36,20 @@
  npm -v  #mostra a versão do npm
 ~~~
 
-### Visual Studio Code: Plugins (Ctrl+P)
-    * ext install spywhere.guides
-    * ext install eamodio.gitlens
-    * ext install christian-kohler.path-intellisense
-    * ext install vscode-icons-team.vscode-icons	
+### Nodemon
+* Atualiza automaticamente o servido do `Node.js`
+
+~~~bash
+npm install nodemon # em todo o programa
+~~~
+
+~~~bash
+npm install nodemon -D # apenas na dependência de desenvolvimento
+~~~
+
+~~~bash
+npm start # ativa e atualiza automaticamente o localhost:3333 
+~~~
 
 ----
 
@@ -64,15 +86,6 @@ app.listen(3333);
 
 ----
 
-## React.js
-~~~bash 
- npx create-react-app frontend #cria um projet
- cd frontend
- npm start
-~~~
-
-----
-
 # Dia 2  // Parei em 00:34:13 
 
 ## Rota e Recursos
@@ -94,34 +107,94 @@ $ sudo snap install insomnia
 * `Request Body`: Corpo da requisição, utilizado para criar ou alterar recursos.
     * Converter json para javascript: `app.use(express.json());`.
 
-## Nodemon
-* Atualiza automaticamente o servido do `Node.js`
-
-~~~bash
-npm install nodemon # em todo o programa
-~~~
-
-~~~bash
-npm install nodemon -D # apenas na dependência de desenvolvimento
-~~~
-
-~~~bash
-npm start # ativa e atualiza automaticamente o localhost:3333 
-~~~
+---
 
 ## Banco de dados
 
+### Modelo Conceitual: Entidades e Funcionalidades
+* ONG
+    * Cadastrar
+    * Login
+    * Logout
+    * Contato
+* CASOS (incident)
+    * Cadastrar
+    * Deletar
+    * Listar
+        * Especificos
+        * Todos
+
+### [SQLite](https://www.sqlite.org/index.html)
+* Driver: SELECT * FROM users
+* Query Builder: table('users').select( * ).where()
+
 ### [Knex.js](http://knexjs.org/)
 
+* `Install`
 ~~~bash
 npm install knex 
 npm install sqlite3
 ~~~
 
-### [SQLite](https://www.sqlite.org/index.html)
-* Driver: SELECT * FROM users
-* Query Builder: table('users').select(*).where()
-
 ~~~bash
 npx knex init # configura o acesso ao banco de dados para cada aplicação
+~~~
+
+#### `Migrations` 
+
+* Configuração do database pelo `knex`
+
+~~~javascript
+// knexfile.js
+development: {
+    client: 'sqlite3',
+    connection: {
+        filename: './src/database/db.sqlite'
+    },
+    migrations: {
+        directory: './src/database/migrations'
+    },
+    useNullAsDefault: true
+},
+~~~
+
+* gera uma tabela apenas no knexfile `create schema` 
+~~~bash
+npx knex migrate:make create_ongs 
+~~~
+
+* configura a estrutura da tabela para o comando `create table`
+~~~javascript
+// 20200325083011_create_ongs.js
+exports.up = function(knex) {
+  return knex.schema.createTable('ong', function (table) {
+    table.string('id').primary();
+    table.string('name').notNullable();
+    table.string('email').notNullable();
+    table.string('whatsapp').notNullable();
+    table.string('city').notNullable();
+    table.string('uf',2).notNullable();
+  })
+};
+
+exports.down = function(knex) { return knex.schema.dropTable('ongs'); };
+~~~
+
+* executa o comando `create table` e cria tabela no banco de dados
+~~~bash
+npx knex migrate:latest 
+~~~
+
+* Desfaz o último comando do `npx knex migrate:latest`
+~~~bash
+npx knex migrate:rollback
+~~~
+
+---
+
+## React.js - Frontend
+~~~bash 
+ npx create-react-app frontend #cria um projet
+ cd frontend
+ npm start
 ~~~
