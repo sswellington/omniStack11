@@ -1,14 +1,13 @@
 # Semana OmniStack 11 
 
-| [Configuração de Ambiente](#configuração-de-ambiente) | [Back-end](#back-end ) | [Front-end ](#front-end) |
-|:--------------------------------:|:---------------------------------------:|:-------------------------:|
-| [Estrutura de diretórios](#estrutura-de-diretórios)     | [Node.js](#nodejs-1) | [React.js ](#reactjs) |
-| [Visual Studio Code](#visual-studio-code-plugins-ctrlp) | [Rota e Recursos](#rota-e-recursos  ) |      |
-| [Node.js](#nodejs)         | [Banco de dados](#banco-de-dados)   |                          |
-| [Nodemon](#nodemon)                |                                     |                          |
-| [Insomnia.rest](#insomniarest--ferramenta-para-manipular-os-métodos-http) |       |                                     |                          
-
-
+| [Configuração de Ambiente](#configuração-de-ambiente) | [Back-end](#back-end ) | [Front-end ](#front-end) | [Git Tags](#git) |
+|:-------------------------------------------------------------------------:|:-------------------------------------:|:------------------------:|------------------|
+| [Estrutura de diretórios](#estrutura-de-diretórios) | [Node.js](#nodejs-1) | [React.js ](#reactjs) | `Feat` |
+| [Visual Studio Code](#visual-studio-code-plugins-ctrlp) | [Rota e Recursos](#rota-e-recursos  ) |  | `Docs` |
+| [Node.js](#nodejs) | [Banco de dados](#banco-de-dados) |  | `Style` |
+| [Nodemon](#nodemon) |  |  | `Refactor` |
+| [Insomnia.rest](#insomniarest--ferramenta-para-manipular-os-métodos-http) |  |  | `Test` |
+|  |  |  | `Chore` |
 ![alt text](/omniStack11.jpg)
 
 ----
@@ -55,6 +54,18 @@ npm start # ativa e atualiza automaticamente o localhost:3333
 ~~~
 
 ----
+
+## Git
+### Mensagens para Commit
+* `feat`: um novo recurso
+* `fix`: uma correção de bug
+* `docs`: alterações na documentação
+* `style`: formatação, falta de dois pontos, etc; nenhuma mudança de código
+* `refactor`: refatoração do código de produção
+* `test`: adicionando testes, teste de refatoração; nenhuma mudança de código de produção
+* `chore`: atualizar tarefas de compilação, configurações do gerenciador de pacotes, etc; nenhuma mudança de código de produção
+
+---- 
 
 # Back-end
 

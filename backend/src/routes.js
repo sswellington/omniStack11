@@ -17,7 +17,6 @@ routes.get('/', (request, response) => {
 routes.post('/ongs', async (request, response) => {
 
     const { name, email, whatsapp, city, uf } = request.body;
-
     const id = crypto.randomBytes(4).toString('HEX');
 
     // aguardo o código terminar para exibir o response
