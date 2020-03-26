@@ -1,4 +1,5 @@
 // Classe: OngController
+// máximo 5 métodos por Controller
 
 const crypto = require('crypto');
 const connection = require('../database/connection');

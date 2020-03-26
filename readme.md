@@ -18,6 +18,7 @@
 ### Estrutura de diretórios
 * `./backend`
     * `./scr`
+    * `./controllers`
     * `./database`
         * `./migration` 
 * `./frontend`
