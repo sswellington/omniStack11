@@ -5,7 +5,7 @@
 | [Estrutura de diretórios](#estrutura-de-diretórios) | [Node.js](#nodejs-1) | [React.js ](#reactjs) | `Feat` |
 | [Visual Studio Code](#visual-studio-code-plugins-ctrlp) | [Rota e Recursos](#rota-e-recursos  ) |  | `Docs` |
 | [Node.js](#nodejs) | [Banco de dados](#banco-de-dados) |  | `Style` |
-| [Nodemon](#nodemon) |  |  | `Refactor` |
+| [Nodemon](#nodemon) | [CORS](#módulo-de-segurança) |  | `Refactor` |
 | [Insomnia.rest](#insomniarest--ferramenta-para-manipular-os-métodos-http) |  |  | `Test` |
 |  |  |  | `Chore` |
 
@@ -126,7 +126,6 @@ $ sudo snap install insomnia
 ---
 
 ## Banco de dados
-
 ### Modelo Conceitual: Entidades e Funcionalidades
 * ONG
     * Cadastrar
@@ -206,10 +205,27 @@ npx knex migrate:latest
 npx knex migrate:rollback
 ~~~
 
+--- 
+
+## Módulo de Segurança
+### Cross-Origin Resource Sharing (CORS)
+Define quem possui autoridade de acessar a aplicação
+
+~~~bash
+npm install cors 
+~~~
+
+Exemplo de uso:
+
+~~~javascript
+app.use(cors({
+    origin: 'domínio_da_app.com'
+}));
+~~~
+
 ---
 
 # Frontend
-
 ## React.js
 ~~~bash 
  npx create-react-app frontend #cria um projet
