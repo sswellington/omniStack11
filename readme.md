@@ -22,6 +22,11 @@
     * `./database`
         * `./migration` 
 * `./frontend`
+    * `./public`
+    * `./scr`
+        * `./assets`
+        * `./pages`
+
 
 ### Visual Studio Code: Plugins (Ctrl+P)
     * ext install spywhere.guides
@@ -239,7 +244,40 @@ npm start
 ### Conceitos 
 * Limpeza de Componente
 * JavaScript XML (JSX) 
-* Propriedades
+
+#### Propriedades (`props`)
+~~~javascript
+export default function App() {
+  return (
+    <Header title="Semana"></Header>
+  );
+}
+
+export default function Header(props) {
+    return (
+        <header>
+            <h1> {props.title} </h1>
+        </header>
+    );
+}
+~~~    
+##### `childen`
+~~~javascript
+export default function App() {
+return (
+    <Header> Semana OmniStack </Header>
+);
+}
+
+export default function Header(props) {
+    return (
+        <header>
+            <h1> {props.childen} </h1>
+        </header>
+    );
+}
+    ~~~  
+
 * Estado
 * Imutabilidade
 
