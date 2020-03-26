@@ -241,6 +241,14 @@ cd frontend
 npm start
 ~~~
 
+### Icones para React
+~~~bash 
+cd frontend
+npm install react-icons
+~~~
+
+---
+
 ### Conceitos 
 * Limpeza de Componente
 * JavaScript XML (JSX) 
@@ -289,3 +297,4 @@ export default function Header(props) {
     * Listagem
     * cadastrar casos
 * Conectar aplicação à API
+
