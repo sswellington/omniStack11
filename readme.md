@@ -227,8 +227,27 @@ app.use(cors({
 
 # Frontend
 ## React.js
+
+### Criar projeto 
 ~~~bash 
- npx create-react-app frontend #cria um projet
- cd frontend
- npm start
+cd..
+npx create-react-app frontend #cria um projet
+cd frontend
+npm start
 ~~~
+
+### Conceitos 
+* Limpeza de Componente
+* JavaScript XML (JSX) 
+* Propriedades
+* Estado
+* Imutabilidade
+
+### Configuração 
+* Página de login
+* Configuração de rotas
+* ONGs
+    * Cadastro
+    * Listagem
+    * cadastrar casos
+* Conectar aplicação à API
