@@ -3,8 +3,8 @@
 | [Configuração de Ambiente](#configuração-de-ambiente) | [Back-end](#back-end ) | [Front-end ](#front-end) | [Git Tags](#git) |
 |:-------------------------------------------------------------------------:|:-------------------------------------:|:------------------------:|------------------|
 | [Estrutura de diretórios](#estrutura-de-diretórios) | [Node.js](#nodejs-1) | [React.js ](#reactjs) | `Feat` |
-| [Visual Studio Code](#visual-studio-code-plugins-ctrlp) | [Rota e Recursos](#rota-e-recursos  ) |  | `Docs` |
-| [Node.js](#nodejs) | [Banco de dados](#banco-de-dados) |  | `Style` |
+| [Visual Studio Code](#visual-studio-code-plugins-ctrlp) | [Rota e Recursos](#rota-e-recursos  ) |  [React Icons](#icones-para-react) | `Docs` |
+| [Node.js](#nodejs) | [Banco de dados](#banco-de-dados) | [React Router Dom](#router-no-react) | `Style` |
 | [Nodemon](#nodemon) | [CORS](#módulo-de-segurança) |  | `Refactor` |
 | [Insomnia.rest](#insomniarest--ferramenta-para-manipular-os-métodos-http) |  |  | `Test` |
 |  |  |  | `Chore` |
@@ -16,17 +16,18 @@
 # Configuração de Ambiente:
 
 ### Estrutura de diretórios
-* `./backend`
-    * `./scr`
-    * `./controllers`
-    * `./database`
-        * `./migration` 
-* `./frontend`
-    * `./public`
-    * `./scr`
-        * `./assets`
-        * `./pages`
-
+#### `./backend`
+* `./scr`
+* `./controllers`
+* `./database`
+    * `./migration` 
+#### `./frontend`
+* `./public`
+* `./scr`
+    * `./assets`
+    * `./pages`
+        * `./Logon`
+        * `./Register`
 
 ### Visual Studio Code: Plugins (Ctrl+P)
     * ext install spywhere.guides
@@ -241,10 +242,23 @@ cd frontend
 npm start
 ~~~
 
+### Servidor
+~~~bash 
+npm start #porta 3000
+serve -s build #porta 5000
+~~~
+
+
 ### Icones para React
 ~~~bash 
 cd frontend
 npm install react-icons
+~~~
+
+### Router no React
+~~~bash 
+cd frontend
+npm install react-router-dom
 ~~~
 
 ---
