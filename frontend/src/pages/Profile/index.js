@@ -16,50 +16,36 @@ export default function Profile() {
 				<button type="button"> <FiPower size={18} color="#E02041" /> </button>
 			</header>
 
-			<h1>Casos cadastrados</h1>
+			<h1>Casos cadastrados </h1>
 			<ul>
 				<li>
 					<strong>CASOS: </strong>
 					<p>Caso teste</p>
-
 					<strong>DESCRIÇÃO: </strong>
 					<p>Descrição teste</p>
-
 					<strong>VALOR: </strong>
 					<p>R$ 120,00</p>
-
 					<button type="button"><FiTrash2 size={20} color="#a8a8b3" /></button>
 				</li>
-			</ul>
-			<ul>
 				<li>
 					<strong>CASOS: </strong>
 					<p>Caso teste</p>
-
 					<strong>DESCRIÇÃO: </strong>
 					<p>Descrição teste</p>
-
 					<strong>VALOR: </strong>
 					<p>R$ 120,00</p>
-
 					<button type="button"><FiTrash2 size={20} color="#a8a8b3" /></button>
 				</li>
-			</ul>
-			<ul>
 				<li>
 					<strong>CASOS: </strong>
 					<p>Caso teste</p>
-
 					<strong>DESCRIÇÃO: </strong>
 					<p>Descrição teste</p>
-
 					<strong>VALOR: </strong>
 					<p>R$ 120,00</p>
-
 					<button type="button"><FiTrash2 size={20} color="#a8a8b3" /></button>
 				</li>
 			</ul>
-
 		</div>
 	);
 }

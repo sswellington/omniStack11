@@ -1,5 +1,6 @@
 // routes.js
-
+// 1:14:05
+// Arrumar o CSS
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
