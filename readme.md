@@ -5,7 +5,7 @@
 | [Estrutura de diretórios](#estrutura-de-diretórios) | [Node.js](#nodejs-1) | [React.js ](#reactjs) | `Feat` |
 | [Visual Studio Code](#visual-studio-code-plugins-ctrlp) | [Rota e Recursos](#rota-e-recursos  ) |  [React Icons](#icones-para-react) | `Docs` |
 | [Node.js](#nodejs) | [Banco de dados](#banco-de-dados) | [React Router Dom](#router-no-react) | `Style` |
-| [Nodemon](#nodemon) | [CORS](#módulo-de-segurança) |  | `Refactor` |
+| [Nodemon](#nodemon) | [CORS](#módulo-de-segurança) | [Cliente HTTP](#cliente-http) | `Refactor` |
 | [Insomnia.rest](#insomniarest--ferramenta-para-manipular-os-métodos-http) |  |  | `Test` |
 |  |  |  | `Chore` |
 
@@ -27,7 +27,10 @@
     * `./assets`
     * `./pages`
         * `./Logon`
+        * `./NewIncident`
+        * `./Profile`
         * `./Register`
+    * `./services`
 
 ### Visual Studio Code: Plugins (Ctrl+P)
     * ext install spywhere.guides
@@ -259,6 +262,12 @@ npm install react-icons
 ~~~bash 
 cd frontend
 npm install react-router-dom
+~~~
+
+### Cliente HTTP
+~~~bash 
+cd frontend
+npm install axios
 ~~~
 
 ---
