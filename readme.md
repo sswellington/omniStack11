@@ -307,7 +307,7 @@ export default function Header(props) {
         </header>
     );
 }
-    ~~~  
+~~~  
 
 * Estado
 * Imutabilidade
