@@ -17,7 +17,7 @@ export default function Register() {
     const [uf, setUf] = useState('');
 
     async function handleRegister(e) {
-        e.preventDefault(); //evita da págia recarregar ao clicar no submit
+        e.preventDefault(); //evita da página recarregar ao clicar no submit
 
         const data = {
             name,
