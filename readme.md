@@ -1,4 +1,8 @@
-# Semana OmniStack 11 
+# Semana OmniStack 11: Be The Hero 
+
+<p align="center">
+<img src="/mobile/assets/icon.png">
+</p>
 
 | [Configuração de Ambiente](#configuração-de-ambiente) | [Back-end](#back-end ) | [Front-end ](#front-end) | [Mobile](#mobile) | [Git Tags](#git) |
 |:-------------------------------------------------------------------------:|:-------------------------------------:|:------------------------------------:|:-----------------------------:|:----------------:|
@@ -14,7 +18,6 @@
 ----
 
 # Configuração de Ambiente:
-
 ### Estrutura de diretórios
 #### `./backend`
 * `./scr`
@@ -30,6 +33,14 @@
         * `./NewIncident`
         * `./Profile`
         * `./Register`
+    * `./services`
+#### `./mobile`
+* `./assets`
+* `./scr`
+    * `./assets`
+    * `./pages`
+        * `./Detail`
+        * `./Incidents`
     * `./services`
 
 ### Visual Studio Code: Plugins (Ctrl+P)
@@ -78,7 +89,7 @@ npm start # ativa e atualiza automaticamente o localhost:3333
 
 ---- 
 
-# Back-end
+# Back-end 
 
 ## Node.js
 
@@ -124,6 +135,298 @@ app.listen(3333);
 #### [Insomnia.rest](https://insomnia.rest/) : (Ferramenta para manipular os Métodos HTTP)
 ~~~bash 
 $ sudo snap install insomnia 
+~~~
+
+##### Login
+> Client Code
+~~~javaScript
+var data = JSON.stringify({
+  "id": "aa1e8513"
+});
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === this.DONE) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("POST", "http://localhost:3333/sessions");
+xhr.setRequestHeader("authorization", "aa1e8513");
+xhr.setRequestHeader("content-type", "application/json");
+
+xhr.send(data);
+~~~
+
+~~~http
+POST /sessions HTTP/1.1
+Authorization: aa1e8513
+Content-Type: application/json
+Host: localhost:3333
+Content-Length: 22
+
+{
+	"id" : "aa1e8513"
+}
+~~~
+
+> Curl
+~~~json 
+curl --request POST \
+  --url http://localhost:3333/sessions \
+  --header 'authorization: aa1e8513' \
+  --header 'content-type: application/json' \
+  --data '{
+	"id" : "aa1e8513"
+}'
+~~~
+
+##### Profile
+
+> Client Code
+~~~javaScript
+var data = null;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === this.DONE) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("GET", "http://localhost:3333/profile");
+xhr.setRequestHeader("authorization", "aa1e8513");
+
+xhr.send(data);
+~~~
+
+~~~http
+GET /profile HTTP/1.1
+Authorization: aa1e8513
+Host: localhost:3333
+~~~
+
+> Curl
+~~~noBody
+curl --request GET \
+  --url http://localhost:3333/profile \
+  --header 'authorization: aa1e8513'
+~~~
+
+##### Casos
+
+* List
+
+> Client Code
+~~~javaScript
+var data = null;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === this.DONE) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("GET", "http://localhost:3333/incidents?page=1");
+xhr.setRequestHeader("authorization", "aa1e8513");
+
+xhr.send(data);
+~~~
+
+~~~http
+GET /incidents?page=1 HTTP/1.1
+Authorization: aa1e8513
+Host: localhost:3333
+~~~
+
+> Curl
+~~~noBody
+curl --request GET \
+  --url 'http://localhost:3333/incidents?page=1' \
+  --header 'authorization: aa1e8513'
+~~~
+
+* Create
+
+> Client Code
+~~~javaScript
+var data = JSON.stringify({
+  "title": "Casos 1",
+  "description": "Detalhes dos casos",
+  "value": 120
+});
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === this.DONE) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("POST", "http://localhost:3333/incidents");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("authorization", "aa1e8513");
+
+xhr.send(data);
+~~~
+
+~~~http
+POST /incidents HTTP/1.1
+Content-Type: application/json
+Authorization: aa1e8513
+Host: localhost:3333
+Content-Length: 89
+
+{ 
+	"title" 			: "Casos 1",  
+	"description" : "Detalhes dos casos", 
+	"value" 			: 120
+}
+~~~
+
+
+> Curl
+~~~json
+curl --request POST \
+  --url http://localhost:3333/incidents \
+  --header 'authorization: aa1e8513' \
+  --header 'content-type: application/json' \
+  --data '{ 
+	"title" 			: "Casos 1",  
+	"description" : "Detalhes dos casos", 
+	"value" 			: 120
+}'
+~~~
+
+* Delete
+
+> Client Code
+~~~javaScript
+var data = null;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === this.DONE) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("DELETE", "http://localhost:3333/incidents/3");
+xhr.setRequestHeader("authorization", "aa1e8513");
+
+xhr.send(data);
+~~~
+
+~~~http
+DELETE /incidents/3 HTTP/1.1
+Authorization: aa1e8513
+Host: localhost:3333
+~~~
+
+> Curl
+~~~noBody
+curl --request DELETE \
+  --url http://localhost:3333/incidents/3 \
+  --header 'authorization: aa1e8513'
+~~~
+
+##### Ongs
+* List
+
+> Client Code
+~~~javaScript
+var data = null;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === this.DONE) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("GET", "http://localhost:3333/ongs");
+
+xhr.send(data);
+~~~
+
+~~~http
+GET /ongs HTTP/1.1
+Host: localhost:3333
+~~~
+
+> Curl
+~~~noBody
+curl --request GET \
+  --url http://localhost:3333/ongs
+~~~
+
+* Create
+
+> Client Code
+~~~javaScript
+var data = JSON.stringify({
+  "name": "APAD2",
+  "email": "contato@apad.com.br",
+  "whatsapp": "470000000",
+  "city": "Rio do Sul",
+  "uf": "SC"
+});
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === this.DONE) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("POST", "http://localhost:3333/ongs");
+xhr.setRequestHeader("content-type", "application/json");
+
+xhr.send(data);
+~~~
+
+~~~http
+POST /ongs HTTP/1.1
+Content-Type: application/json
+Host: localhost:3333
+Content-Length: 131
+
+{
+	"name" 		 : "APAD2",
+	"email" 	 : "contato@apad.com.br",
+	"whatsapp" : "470000000",
+	"city" 		 : "Rio do Sul",
+	"uf"			 : "SC"
+}
+~~~
+
+> Curl
+~~~json
+curl --request POST \
+  --url http://localhost:3333/ongs \
+  --header 'content-type: application/json' \
+  --data '{
+	"name" 		 : "APAD2",
+	"email" 	 : "contato@apad.com.br",
+	"whatsapp" : "470000000",
+	"city" 		 : "Rio do Sul",
+	"uf"			 : "SC"
+}'
 ~~~
 
 #### Tipos de parâmetros
@@ -234,7 +537,7 @@ app.use(cors({
 
 ---
 
-# Frontend
+# Frontend 
 ## React.js
 
 ### Criar projeto 
@@ -323,7 +626,7 @@ export default function Header(props) {
 
 ---
 
-# Mobile
+# Mobile 
 ## React Native
 
 ### Emulador 
@@ -351,7 +654,7 @@ expo install expo-constants
 expo install expo-mail-composer
 ~~~
 
-#### Correção de erros
+#### Correção de erros :hammer:
 ##### internal/fs/watchers.js:177
 ~~~bash
 internal/fs/watchers.js:177
@@ -382,3 +685,5 @@ npm install axios
 ~~~bash
 npm install intl
 ~~~
+
+# TDD
