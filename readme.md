@@ -4,9 +4,9 @@
 |:-------------------------------------------------------------------------:|:-------------------------------------:|:------------------------------------:|:-----------------------------:|:----------------:|
 | [Estrutura de diretórios](#estrutura-de-diretórios) | [Node.js](#nodejs-1) | [React.js ](#reactjs) | [React Native](#react-native) | `Feat` |
 | [Visual Studio Code](#visual-studio-code-plugins-ctrlp) | [Rota e Recursos](#rota-e-recursos  ) | [React Icons](#icones-para-react) | [Expo](#expo) | `Docs` |
-| [Node.js](#nodejs) | [Banco de dados](#banco-de-dados) | [React Router Dom](#router-no-react) |  | `Style` |
-| [Nodemon](#nodemon) | [CORS](#módulo-de-segurança) | [Cliente HTTP](#cliente-http) |  | `Refactor` |
-| [Insomnia.rest](#insomniarest--ferramenta-para-manipular-os-métodos-http) |  |  |  | `Test` |
+| [Node.js](#nodejs) | [Banco de dados](#banco-de-dados) | [React Router Dom](#router-no-react) | [React Navigation](#react-navigation)  | `Style` |
+| [Nodemon](#nodemon) | [CORS](#módulo-de-segurança) | [Cliente HTTP](#cliente-http) | [Cliente HTTP](#react-navigation) | `Refactor` |
+| [Insomnia.rest](#insomniarest--ferramenta-para-manipular-os-métodos-http) |  |  | [Intl](#intl) | `Test` |
 |  |  |  |  | `Chore` |
 
 ![alt text](/omniStack11.jpg)
@@ -321,8 +321,14 @@ export default function Header(props) {
     * cadastrar casos
 * Conectar aplicação à API
 
+---
+
 # Mobile
 ## React Native
+
+### Emulador 
+* Direto no celular: instalar o app `expo` no android
+* Emulador online: snack.expo.io 
 
 ### Expo
 ~~~bash 
@@ -334,8 +340,45 @@ expo init mobile
 # template: blank 
 cd mobile
 npm start
+npm start --reset-cache
 ~~~
 
-### Emulador 
-* Direto no celular: instalar o app `expo` no android
-* Emulador online: snack.expo.io 
+~~~bash
+expo install expo-constants
+~~~
+
+~~~bash
+expo install expo-mail-composer
+~~~
+
+#### Correção de erros
+##### internal/fs/watchers.js:177
+~~~bash
+internal/fs/watchers.js:177
+    throw error;
+~~~
+
+[Solução](https://stackoverflow.com/questions/22475849/node-js-what-is-enospc-error-and-how-to-solve)
+~~~bash
+sudo echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+~~~
+
+### [React Navigation](https://reactnavigation.org/docs/getting-started)
+~~~bash
+npm install @react-navigation/native
+
+expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+
+npm install @react-navigation/stack
+~~~
+
+### Cliente  HTTP
+~~~bash 
+cd mobile
+npm install axios
+~~~
+
+### Intl
+~~~bash
+npm install intl
+~~~
