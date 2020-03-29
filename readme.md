@@ -1,4 +1,4 @@
-# Semana OmniStack 11: Be The Hero 
+# Semana OmniStack 11:
 
 <p align="center">
 <img src="/frontend/src/assets/logo.svg">
@@ -10,7 +10,7 @@
 | [Visual Studio Code](#visual-studio-code-plugins-ctrlp) 	| [Rota e Recursos](#rota-e-recursos  ) 	| [React Icons](#icones-para-react) 	| [Expo](#expo) 	| [Celebrate](#celebrate) 	| `Docs` 	|
 | [Node.js](#nodejs) 	| [Banco de dados](#banco-de-dados) 	| [React Router Dom](#router-no-react) 	| [React Navigation](#react-navigation) 	| [Jest](#jest) 	| `Style` 	|
 | [Nodemon](#nodemon) 	| [CORS](#módulo-de-segurança) 	| [Cliente HTTP](#cliente-http) 	| [Cliente HTTP](#react-navigation) 	|  [Cross-Env](#cross-env)	| `Refactor` 	|
-| [Insomnia.rest](#insomniarest--ferramenta-para-manipular-os-métodos-http) 	|  	|  	| [Intl](#intl) 	| [Supertest](#Supertest) 	| `Test` 	|
+| [Insomnia.rest](#insomniarest--ferramenta-para-manipular-os-métodos-http) 	|  	|  	| [Intl](#intl) 	| [Supertest](#supertest) 	| `Test` 	|
 |  	|  	|  	|  	|  	| `Chore` 	|
 
 ![alt text](/omniStack11.jpg)
@@ -79,7 +79,7 @@ npm install nodemon -D # apenas na dependência de desenvolvimento
 npm start # ativa e atualiza automaticamente o localhost:3333 
 ~~~
 
-----
+--- 
 
 ## Git
 ### Mensagens para Commit
@@ -90,6 +90,35 @@ npm start # ativa e atualiza automaticamente o localhost:3333
 * `refactor`: refatoração do código de produção
 * `test`: adicionando testes, teste de refatoração; nenhuma mudança de código de produção
 * `chore`: atualizar tarefas de compilação, configurações do gerenciador de pacotes, etc; nenhuma mudança de código de produção
+
+--- 
+
+## Deploy
+Hospedagem da aplicação
+
+### Backend - Nodejs
+#### Fluxo pequeno 
+* [Heroku](https://www.heroku.com/)
+#### Fluxo médio 
+* [DigitalOcean](https://www.digitalocean.com/)
+#### Fluxo grande 
+* AWS 
+* Google Cloud Platform
+* MicrosofEasy Microsoft Azure
+
+### Frontend - React
+#### Fluxo pequeno 
+* Netlify
+
+----
+
+## Padrão de código
+* ESLint
+* Prettier
+
+## Autentificação: JWT
+
+## Syled Components
 
 ---- 
 
