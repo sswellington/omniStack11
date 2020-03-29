@@ -4,14 +4,14 @@
 <img src="/mobile/assets/icon.png">
 </p>
 
-| [Configuração de Ambiente](#configuração-de-ambiente) | [Back-end](#back-end ) | [Front-end ](#front-end) | [Mobile](#mobile) | [Git Tags](#git) |
-|:-------------------------------------------------------------------------:|:-------------------------------------:|:------------------------------------:|:-----------------------------:|:----------------:|
-| [Estrutura de diretórios](#estrutura-de-diretórios) | [Node.js](#nodejs-1) | [React.js ](#reactjs) | [React Native](#react-native) | `Feat` |
-| [Visual Studio Code](#visual-studio-code-plugins-ctrlp) | [Rota e Recursos](#rota-e-recursos  ) | [React Icons](#icones-para-react) | [Expo](#expo) | `Docs` |
-| [Node.js](#nodejs) | [Banco de dados](#banco-de-dados) | [React Router Dom](#router-no-react) | [React Navigation](#react-navigation)  | `Style` |
-| [Nodemon](#nodemon) | [CORS](#módulo-de-segurança) | [Cliente HTTP](#cliente-http) | [Cliente HTTP](#react-navigation) | `Refactor` |
-| [Insomnia.rest](#insomniarest--ferramenta-para-manipular-os-métodos-http) |  |  | [Intl](#intl) | `Test` |
-|  |  |  |  | `Chore` |
+| [Configuração de Ambiente](#configuração-de-ambiente) 	| [Back-end](#back-end ) 	| [Front-end ](#front-end) 	| [Mobile](#mobile) 	| [TDD](#tdd) 	| [Git Tags](#git) 	|
+|:-------------------------------------------------------------------------:	|:-------------------------------------:	|:------------------------------------:	|:-------------------------------------:	|:-----------------------:	|:----------------:	|
+| [Estrutura de diretórios](#estrutura-de-diretórios) 	| [Node.js](#nodejs-1) 	| [React.js ](#reactjs) 	| [React Native](#react-native) 	| [Joi](#joi) 	| `Feat` 	|
+| [Visual Studio Code](#visual-studio-code-plugins-ctrlp) 	| [Rota e Recursos](#rota-e-recursos  ) 	| [React Icons](#icones-para-react) 	| [Expo](#expo) 	| [Celebrate](#celebrate) 	| `Docs` 	|
+| [Node.js](#nodejs) 	| [Banco de dados](#banco-de-dados) 	| [React Router Dom](#router-no-react) 	| [React Navigation](#react-navigation) 	| [Jest](#jest) 	| `Style` 	|
+| [Nodemon](#nodemon) 	| [CORS](#módulo-de-segurança) 	| [Cliente HTTP](#cliente-http) 	| [Cliente HTTP](#react-navigation) 	|  	| `Refactor` 	|
+| [Insomnia.rest](#insomniarest--ferramenta-para-manipular-os-métodos-http) 	|  	|  	| [Intl](#intl) 	|  	| `Test` 	|
+|  	|  	|  	|  	|  	| `Chore` 	|
 
 ![alt text](/omniStack11.jpg)
 
@@ -686,4 +686,22 @@ npm install axios
 npm install intl
 ~~~
 
+--- 
+
 # TDD
+
+## [Joi](https://github.com/hapijs/joi)
+Biblioteca de validação
+
+## [Celebrate](https://github.com/arb/celebrate)
+
+Integra Joi com Express
+
+~~~bash
+npm install celebrate
+~~~
+
+## [Jest](https://jestjs.io/)
+~~~bash
+npm install jest
+~~~
