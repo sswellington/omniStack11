@@ -1,7 +1,7 @@
 # Semana OmniStack 11: Be The Hero 
 
 <p align="center">
-<img src="/mobile/assets/icon.png">
+<img src="/frontend/src/assets/logo.svg">
 </p>
 
 | [Configuração de Ambiente](#configuração-de-ambiente) 	| [Back-end](#back-end ) 	| [Front-end ](#front-end) 	| [Mobile](#mobile) 	| [TDD](#tdd) 	| [Git Tags](#git) 	|
@@ -9,8 +9,8 @@
 | [Estrutura de diretórios](#estrutura-de-diretórios) 	| [Node.js](#nodejs-1) 	| [React.js ](#reactjs) 	| [React Native](#react-native) 	| [Joi](#joi) 	| `Feat` 	|
 | [Visual Studio Code](#visual-studio-code-plugins-ctrlp) 	| [Rota e Recursos](#rota-e-recursos  ) 	| [React Icons](#icones-para-react) 	| [Expo](#expo) 	| [Celebrate](#celebrate) 	| `Docs` 	|
 | [Node.js](#nodejs) 	| [Banco de dados](#banco-de-dados) 	| [React Router Dom](#router-no-react) 	| [React Navigation](#react-navigation) 	| [Jest](#jest) 	| `Style` 	|
-| [Nodemon](#nodemon) 	| [CORS](#módulo-de-segurança) 	| [Cliente HTTP](#cliente-http) 	| [Cliente HTTP](#react-navigation) 	|  	| `Refactor` 	|
-| [Insomnia.rest](#insomniarest--ferramenta-para-manipular-os-métodos-http) 	|  	|  	| [Intl](#intl) 	|  	| `Test` 	|
+| [Nodemon](#nodemon) 	| [CORS](#módulo-de-segurança) 	| [Cliente HTTP](#cliente-http) 	| [Cliente HTTP](#react-navigation) 	|  [Cross-Env](#cross-env)	| `Refactor` 	|
+| [Insomnia.rest](#insomniarest--ferramenta-para-manipular-os-métodos-http) 	|  	|  	| [Intl](#intl) 	| [Supertest](#Supertest) 	| `Test` 	|
 |  	|  	|  	|  	|  	| `Chore` 	|
 
 ![alt text](/omniStack11.jpg)
@@ -21,9 +21,13 @@
 ### Estrutura de diretórios
 #### `./backend`
 * `./scr`
-* `./controllers`
-* `./database`
-    * `./migration` 
+  * `./controllers`
+  * `./utils`
+  * `./database`
+      * `./migration`
+* `./tests`
+  * `./integration`
+  * `./unit`
 #### `./frontend`
 * `./public`
 * `./scr`
@@ -703,5 +707,110 @@ npm install celebrate
 
 ## [Jest](https://jestjs.io/)
 ~~~bash
-npm install jest
+npm install jest -D
 ~~~
+
+## Cross-Env
+~~~bash
+npm install cross-env
+~~~
+
+>knexfile.js
+~~~javascript
+module.exports = {
+  development: {
+    client: 'sqlite3',
+    connection: {
+      filename: './src/database/db.sqlite'
+    },
+    migrations: {
+      directory: './src/database/migrations'
+    },
+    useNullAsDefault: true
+  },
+
+  test: {
+    client: 'sqlite3',
+    connection: {
+      filename: './src/database/test.sqlite'
+    },
+    migrations: {
+      directory: './src/database/migrations'
+    },
+    useNullAsDefault: true
+  },
+
+  staging: {
+    client: 'postgresql',
+    connection: {
+      database: 'my_db',
+      user:     'username',
+      password: 'password'
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations'
+    }
+  },
+
+  production: {
+    client: 'postgresql',
+    connection: {
+      database: 'my_db',
+      user:     'username',
+      password: 'password'
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations'
+    }
+  }
+};
+~~~
+
+> package.json
+~~~json
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "test": "cross-env NODE_ENV=test jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "celebrate": "^12.0.1",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.2",
+    "express": "^4.17.1",
+    "knex": "^0.20.13",
+    "sqlite3": "^4.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "jest": "^25.2.3",
+    "supertest": "^4.0.2"
+  }
+}
+~~~
+
+---
+
+## [Supertest](https://github.com/visionmedia/supertest)
+~~~bash
+npm install supertest -D
+~~~
+
+<p align="center">
+<img src="/frontend/src/assets/heroes.png">
+</p>

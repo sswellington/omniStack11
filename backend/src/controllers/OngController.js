@@ -2,7 +2,7 @@
 // máximo 5 métodos por Controller
 
 const connection = require('../database/connection');
-const generateUniqueId = require('../utils/generateUniqueId');
+const generateUniqueId = require('../utils/generateUniqueID');
 
 module.exports = {
 
